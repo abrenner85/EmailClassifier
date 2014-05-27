@@ -17,15 +17,15 @@ namespace Softwarekueche.Categorizer.Persister
         /// <summary>
         /// get a list of topics
         /// </summary>
-        public Config GetConfig()
+        public TopicParserConfiguration GetConfig()
         {
-            return new Config("[", "]");
+            return new TopicParserConfiguration("[", "]");
         }
 
         /// <summary>
         /// set a list of topics. this list replaces the existing list
         /// </summary>
-        public void SetConfig(Config config)
+        public void SetConfig(TopicParserConfiguration topicParserConfiguration)
         {
             // todo implement
         }

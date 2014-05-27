@@ -1,13 +1,13 @@
 namespace Softwarekueche.Categorizer.Persister
 {
-    public class Config
+    public class TopicParserConfiguration
     {
         public string TopicStart { get; set; }
         public string TopicEnd { get; set; }
 
-        public Config() {}
+        public TopicParserConfiguration() {}
 
-        public Config(string topicStart, string topicEnd) : this()
+        public TopicParserConfiguration(string topicStart, string topicEnd) : this()
         {
             TopicStart = topicStart;
             TopicEnd = topicEnd;

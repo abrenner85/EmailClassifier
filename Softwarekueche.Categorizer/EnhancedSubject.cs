@@ -5,11 +5,11 @@ namespace Softwarekueche.Categorizer
 {
     public class EnhancedSubject
     {
-        private readonly Config _config;
+        private readonly TopicParserConfiguration _topicParserConfiguration;
 
-        public EnhancedSubject(string subjectToParse, Config config)
+        public EnhancedSubject(string subjectToParse, TopicParserConfiguration topicParserConfiguration)
         {
-            _config = config;
+            _topicParserConfiguration = topicParserConfiguration;
             Subject = subjectToParse;
 
             Parse();
@@ -18,11 +18,11 @@ namespace Softwarekueche.Categorizer
         private void Parse()
         {
             // get topic of email and remove topic
-            var tmpTopic = Subject.Between(_config.TopicStart, _config.TopicEnd).Trim();
+            var tmpTopic = Subject.Between(_topicParserConfiguration.TopicStart, _topicParserConfiguration.TopicEnd).Trim();
             Topic=new Topic() {Title = tmpTopic};
 
             // get subject w/o topic
-            Subject = Subject.Replace(_config.TopicStart + tmpTopic + _config.TopicEnd, "")
+            Subject = Subject.Replace(_topicParserConfiguration.TopicStart + tmpTopic + _topicParserConfiguration.TopicEnd, "")
                 .Trim()
                 .Replace("  ", " ").Replace("  ", " "); // replace all multiple spaces.
         }

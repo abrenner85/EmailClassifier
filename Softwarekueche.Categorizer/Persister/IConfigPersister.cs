@@ -8,11 +8,11 @@
         /// <summary>
         /// get a list of topics
         /// </summary>
-        Config GetConfig();
+        TopicParserConfiguration GetConfig();
 
         /// <summary>
         /// set a list of topics. this list replaces the existing list
         /// </summary>
-        void SetConfig(Config config);
+        void SetConfig(TopicParserConfiguration topicParserConfiguration);
     }
 }

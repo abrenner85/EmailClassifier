@@ -37,6 +37,7 @@
             this.tabSwk = this.Factory.CreateRibbonTab();
             this.grpCategorizer = this.Factory.CreateRibbonGroup();
             this.btnEditTopics = this.Factory.CreateRibbonButton();
+            this.btnDonate = this.Factory.CreateRibbonButton();
             this.tabSwk.SuspendLayout();
             this.grpCategorizer.SuspendLayout();
             // 
@@ -50,14 +51,21 @@
             // grpCategorizer
             // 
             this.grpCategorizer.Items.Add(this.btnEditTopics);
+            this.grpCategorizer.Items.Add(this.btnDonate);
             this.grpCategorizer.Label = "Topics";
             this.grpCategorizer.Name = "grpCategorizer";
             // 
             // btnEditTopics
             // 
-            this.btnEditTopics.Label = "Manage";
+            this.btnEditTopics.Label = "Manage Topics";
             this.btnEditTopics.Name = "btnEditTopics";
             this.btnEditTopics.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnEditTopics_Click);
+            // 
+            // btnDonate
+            // 
+            this.btnDonate.Label = "Donate with PayPal";
+            this.btnDonate.Name = "btnDonate";
+            this.btnDonate.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDonate_Click);
             // 
             // CategorizerRibbon
             // 
@@ -77,6 +85,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tabSwk;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpCategorizer;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnEditTopics;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDonate;
     }
 
     partial class ThisRibbonCollection

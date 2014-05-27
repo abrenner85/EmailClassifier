@@ -6,7 +6,7 @@ using Softwarekueche.Categorizer.Persister;
 namespace Softwarekueche.Categorizer.Tests
 {
     [TestFixture()]
-    public class Class1
+    public class StringExtensionTests
     {
         [Test()]
         public void Between_Test_1()
@@ -62,7 +62,7 @@ namespace Softwarekueche.Categorizer.Tests
         public void Parse_Subject_Without_Anything()
         {
             const string sampleSubject = "This is the subject";
-            var sut = new EnhancedSubject(sampleSubject, new Config("[", "]"));
+            var sut = new EnhancedSubject(sampleSubject, new TopicParserConfiguration("[", "]"));
 
             Assert.That(sut.Subject, Is.EqualTo("This is the subject"));
         }
@@ -71,10 +71,10 @@ namespace Softwarekueche.Categorizer.Tests
         public void Parse_Subject_With_Topic()
         {
             const string sampleSubject = "[TPC]This is the subject";
-            var sut = new EnhancedSubject(sampleSubject, new Config("[", "]"));
+            var sut = new EnhancedSubject(sampleSubject, new TopicParserConfiguration("[", "]"));
 
             Assert.That(sut.Subject, Is.EqualTo("This is the subject"));
-            Assert.That(sut.Topic, Is.EqualTo("TPC"));
+            Assert.That(sut.Topic.Title, Is.EqualTo("TPC"));
         }
     }
 }
